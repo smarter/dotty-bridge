@@ -17,3 +17,8 @@ it allows you to compile your code using Dotty instead of Scala 2.
 ### Usage
 
 See https://github.com/smarter/dotty-example-project for an example.
+
+### Discuss
+
+Feel free to come chat with us on the
+[Dotty gitter](http://gitter.im/lampepfl/dotty)!
