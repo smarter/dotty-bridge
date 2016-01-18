@@ -36,6 +36,12 @@ private final class CachedCompiler0(args: Array[String], output: Output, residen
   private[this] def run(sources: List[File], changes: DependencyChanges, callback: AnalysisCallback, log: Logger, compileProgress: CompileProgress): Unit = {
     debug(log, args.mkString("Calling Dotty compiler with arguments  (CompilerInterface):\n\t", "\n\t", ""))
     val reporter = DottyMain.process(commandArguments(sources.toArray))
-    ()
+    if (reporter.hasErrors) {
+      throw new InterfaceCompileFailed(args, Array())
+    }
   }
+}
+
+class InterfaceCompileFailed(override val arguments: Array[String], override val problems: Array[Problem]) extends xsbti.CompileFailed {
+  override val toString = "Compilation failed"
 }
