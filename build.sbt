@@ -7,6 +7,7 @@ lazy val root = (project in file(".")).
       "org.scala-lang" %% "dotty" % "0.1-SNAPSHOT",
       "org.scala-sbt" % "interface" % "0.13.10-SNAPSHOT"
     ),
+    publishArtifact in packageDoc := false,
     version := "0.1-SNAPSHOT",
     // 2.11.5 is the version used by Dotty itself currently, we do the same to
     // avoid trouble.
