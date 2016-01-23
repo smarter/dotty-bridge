@@ -5,7 +5,7 @@ lazy val root = (project in file(".")).
     description := "sbt compiler bridge for Dotty",
     libraryDependencies := Seq(
       "org.scala-lang" %% "dotty" % "0.1-SNAPSHOT",
-      "org.scala-sbt" % "interface" % "0.13.10-SNAPSHOT"
+      "org.scala-sbt" % "interface" % sbtVersion.value
     ),
     publishArtifact in packageDoc := false,
     version := "0.1-SNAPSHOT",
