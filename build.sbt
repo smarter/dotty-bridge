@@ -6,7 +6,8 @@ lazy val root = (project in file(".")).
     libraryDependencies := Seq(
       "org.scala-lang" %% "dotty" % "0.1-SNAPSHOT",
       "org.scala-sbt" % "interface" % sbtVersion.value,
-      "org.scala-sbt" % "api" % sbtVersion.value % "test"
+      "org.scala-sbt" % "api" % sbtVersion.value % "test",
+      "org.specs2" %% "specs2" % "2.3.11" % "test"
     ),
     publishArtifact in packageDoc := false,
     version := "0.1-SNAPSHOT",
@@ -15,5 +16,8 @@ lazy val root = (project in file(".")).
     scalaVersion := "2.11.5",
     // Ideally, the sources should be published with crossPaths := false and the
     // binaries with crossPaths := true, but I haven't figured out how to do this.
-    crossPaths := false
+    crossPaths := false,
+
+    fork in Test := true,
+    parallelExecution in Test := false
   )
