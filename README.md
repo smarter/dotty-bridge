@@ -7,10 +7,9 @@ it allows you to compile your code using Dotty instead of Scala 2.
 
 ### Implementation status
 
-- [X] Minimal `sbt compile` support
-- [ ] Incremental compilation (currently, the full sources will always be recompiled)
+- [X] `sbt compile` support, including [incremental recompilation](http://www.scala-sbt.org/0.13/docs/Understanding-Recompilation.html)
 - [ ] `sbt console` support (may involve some changes to the Dotty REPL)
-- [ ] `sbt doc` support (not possible until we have a Dotty doc tool)
+- [ ] `sbt doc` support
 
 ### Usage
 
