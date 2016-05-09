@@ -21,3 +21,32 @@ lazy val root = (project in file(".")).
     fork in Test := true,
     parallelExecution in Test := false
   )
+
+// Options for scripted tests
+ScriptedPlugin.scriptedSettings
+scriptedLaunchOpts := Seq("-Xmx1024m")
+scriptedBufferLog := false
+// TODO: Use this instead of manually copying DottyInjectedPlugin.scala
+// everywhere once https://github.com/sbt/sbt/issues/2601 gets fixed.
+/*
+scriptedPrescripted := { f =>
+  IO.write(inj, """
+import sbt._
+import Keys._
+
+object DottyInjectedPlugin extends AutoPlugin {
+  override def requires = plugins.JvmPlugin
+  override def trigger = allRequirements
+
+  override val projectSettings = Seq(
+    scalaVersion := "0.1-SNAPSHOT",
+    scalacOptions += "-language:Scala2",
+    scalaBinaryVersion  := "2.11",
+    autoScalaLibrary := false,
+    libraryDependencies ++= Seq("org.scala-lang" % "scala-library" % "2.11.5"),
+    scalaCompilerBridgeSource := ("ch.epfl.lamp" % "dotty-bridge" % "0.1-SNAPSHOT" % "component").sources()
+  )
+}
+""")
+}
+*/
