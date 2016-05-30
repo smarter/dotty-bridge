@@ -11,7 +11,7 @@ lazy val root = (project in file(".")).
       "org.specs2" %% "specs2" % "2.3.11" % "test"
     ),
     publishArtifact in packageDoc := false,
-    version := "0.1.0",
+    version := "0.1.1-SNAPSHOT",
     // 2.11.5 is the version used by Dotty itself currently, we do the same to
     // avoid trouble.
     scalaVersion := "2.11.5",
