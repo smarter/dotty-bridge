@@ -3,6 +3,7 @@ lazy val root = (project in file(".")).
     organization := "ch.epfl.lamp",
     name := "dotty-bridge",
     description := "sbt compiler bridge for Dotty",
+    resolvers += Resolver.typesafeIvyRepo("releases"),
     libraryDependencies := Seq(
       "org.scala-lang" %% "dotty" % "0.1-SNAPSHOT",
       "org.scala-sbt" % "interface" % sbtVersion.value,
