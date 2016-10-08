@@ -1,4 +1,0 @@
-> compile
-$ copy-file changes/A2.scala A.scala
-# Compilation of B.scala should fail because A#S is no longer a subtype of Int
--> compile

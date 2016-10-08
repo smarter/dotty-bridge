@@ -1,2 +1,0 @@
-
-trait B extends A

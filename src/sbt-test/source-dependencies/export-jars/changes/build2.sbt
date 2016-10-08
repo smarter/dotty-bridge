@@ -1,1 +1,0 @@
-exportJars := true

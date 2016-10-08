@@ -1,3 +1,0 @@
-package clear
-
-object A

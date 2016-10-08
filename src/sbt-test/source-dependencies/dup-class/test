@@ -1,6 +1,0 @@
-$ copy-file changes/A.scala A.scala
-> compile
-$ copy-file changes/A2.scala B.scala
--> compile
-$ copy-file changes/B.scala B.scala
-> compile
